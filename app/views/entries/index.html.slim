@@ -1,0 +1,9 @@
+= turbo_frame_tag "form_frame" do
+  = form_with model: @entry, url: entries_path, method: :post, data: { turbo_frame: "weather_frame" } do |form|
+    .field
+      = form.label :location, "Enter City:"
+      = form.text_field :location, autofocus: true
+    .actions
+      = form.submit "Get Weather"
+
+= turbo_frame_tag "weather_frame"

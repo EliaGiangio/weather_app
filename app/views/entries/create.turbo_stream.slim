@@ -1,0 +1,13 @@
+= turbo_stream.replace "weather_frame" do
+  = turbo_frame_tag "weather_frame" do
+    h2 = @entry.city
+    p = @entry.weather
+
+= turbo_stream.replace "form_frame" do
+  = turbo_frame_tag "form_frame" do
+    = form_with model: @entry, url: entries_path, method: :post, data: { turbo_frame: "weather_frame" } do |form|
+      .field
+        = form.label :location, "Enter City:"
+        = form.text_field :location, autofocus: true
+      .actions
+        = form.submit "Get Weather"

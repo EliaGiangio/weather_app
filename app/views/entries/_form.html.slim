@@ -1,0 +1,6 @@
+- if weather
+  .mt-4
+    p.text-2xlg.font-semibold City: #{weather[:loc_name]}
+    p.text-lg.font-semibold Weather: #{weather[:weather_main]}
+- else
+  p.mt-4.text-red-500 No weather data available.

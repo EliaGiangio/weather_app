@@ -1,24 +1,17 @@
-# README
+# WEATHER API APP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The following is a simple Ruby on Rails app that allows the user to find the current weather for the city they input.
+The app fetches data from the OpenWeather API.
 
-Things you may want to cover:
+* Ruby version: 3.0.3
 
-* Ruby version
+* Rails version: 7.1.3
 
-* System dependencies
+Features
+* Slim Templates: Uses Slim for templating.
+* Tailwind CSS: For modern, responsive styling.
+* Environment Variables: Managed using dotenv.
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Running the app:
+* Run your build process with ./bin/dev. when running locally, to ensure Tailwind's consistency.

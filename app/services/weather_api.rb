@@ -20,6 +20,8 @@ class WeatherApi
     weather_desc = data['weather'][0]['description']
     temp = data['main']['temp']
 
+    
+
     # Data to return in the controller
     {
       weather_main: weather_main,

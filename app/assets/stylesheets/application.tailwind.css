@@ -1,13 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/*
 
 @layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+  .bg-custom {
+    @apply bg-cover bg-center bg-no-repeat;
+    background-image: url('https://res.cloudinary.com/dggfjc8rb/image/upload/v1723023228/earth-1617121_1280_oldn9v.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
   }
 }
 
-*/
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+}

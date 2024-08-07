@@ -1,13 +1,21 @@
 = turbo_stream.replace "weather_frame" do
   = turbo_frame_tag "weather_frame" do
-    h2 = @entry.city
-    p = @entry.weather
+    .flex.mx-auto.p-8.bg-white.bg-opacity-60.rounded-lg.shadow-lg.max-w-4xl
+      - if @entry.weather.present?
+        .mb-6.flex.flex-col.items-center.justify-center.max-w-4xl
+          h2.text-2xl.font-bold.text-gray-500.mb-2.shadow-text-2xl = @entry.city
+          p.text-lg.font-bold.text-gray-700.shadow-text-2xl = @entry.weather
+          p.text-lg.font-bold.text-gray-700 = @entry.description
+
+      - else
+        p.mt-4.text-red-500.text-lg.font-medium No weather data available.
 
 = turbo_stream.replace "form_frame" do
   = turbo_frame_tag "form_frame" do
     = form_with model: @entry, url: entries_path, method: :post, data: { turbo_frame: "weather_frame" } do |form|
-      .field
-        = form.label :location, "Enter City:"
-        = form.text_field :location, autofocus: true
-      .actions
-        = form.submit "Get Weather"
+      .container.mx-auto.p-6.bg-white.bg-opacity-60.rounded-lg.shadow-md.max-w-md.mt-8
+        .flex.flex-col.items-center.mb-4
+          = form.label :location, "Enter City:", class: "block text-lg font-medium text-gray-700"
+          = form.text_field :location, required: true, autofocus: true, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+        .actions
+          = form.submit "Get Weather", class: "w-full bg-gray-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"

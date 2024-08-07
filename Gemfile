@@ -29,6 +29,13 @@ gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 gem "redis", ">= 4.0.1"
 
+# Ensure that I can use .env file to hide API Key
+gem 'dotenv', groups: [:development, :test]
+
+# generate slim templates automatically instead of ERB
+gem "slim-rails"
+
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
@@ -65,3 +72,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "tailwindcss-rails", "~> 2.7"
